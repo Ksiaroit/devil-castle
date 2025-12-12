@@ -1,0 +1,487 @@
+// メインビジュアル
+.main-vi {
+  background-image: url("../../../assets/image/vsevolod-kxiJjBV8ov0-unsplash.jpg");
+  background-size: cover;
+  background-position: center top;
+  // purpleのabsoluteをメインビジュアルに固定
+  position: relative;
+}
+
+.main-vi .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+  height: 640px;
+  // titleのabsoluteをcontainerに固定
+  position: relative;
+}
+
+.main-vi .title {
+  // 自由に配置するCSS
+  position: absolute;
+  bottom: 100px;
+  z-index: 2;
+}
+
+.main-vi h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.main-vi p {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.main-vi .purple {
+  background-color: #8f19a7;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  // 乗算のCSS
+  mix-blend-mode: multiply;
+}
+
+// メインビジュアルのメディアクエリ
+@media only screen and (max-width:960px) {
+  .main-vi h1 {
+    font-size: 50px;
+  }
+
+  .main-vi .container {
+    height: 540px;
+  }
+}
+
+
+
+// セクション１
+.section1 {
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.section1 .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.section1 .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section1 .col {
+  width: 48%;
+}
+
+.section1 .sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section1 h2 {
+  font-size: 48px;
+  font-weight: 700;
+  // 行間を開けるCSS
+  line-height: 1.6;
+}
+
+.section1 .text {
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 50px 0;
+}
+
+.btn {
+  font-size: 18px;
+  // MOREのボタンを指定した色の線で囲う
+  border: solid 1px #ffffff;
+  // 囲った線の角をどれだけ丸くするか
+  border-radius: 100px;
+  // aタグは高さがないため、高さを持たせるCSS
+  display: inline-block;
+  width: 270px;
+  line-height: 60px;
+  text-align: center;
+  // btn:hoverで追加したtransitionをマウスを話した時にも同じように動作するように設定
+  transition: .5s;
+}
+
+// カーソルをボタンに持ってきた時の挙動を加える
+.btn:hover {
+  color: #60188f;
+  border: solid 1px #60188f;
+  // カーソルを合わせた時にアニメーションが反応する速度を変更
+  transition: .5s;
+}
+
+// セクション１のメディアクエリ
+@media only screen and (max-width: 980px) {
+  .section1 .row {
+    // 横幅100%をはみ出た後に縦並びにするか？
+    flex-wrap: wrap;
+  }
+
+  .section1 .col {
+    // ここはもともと48％だったがflex-wrapの適応のため100%に変更している
+    width: 100%;
+  }
+
+  .section1 h2 {
+    // タイトル文字が大きすぎていたため、24ピクセルに変更している
+    font-size: 24px;
+  }
+
+  .section1 .text {
+    font-size: 15px;
+    line-height: 1.6;
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .btn {
+    width: 200px;
+    margin-left: 60px;
+    text-align: center;
+  }
+}
+
+
+
+// セクション２
+.section2 {
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.section2 .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.section2 .sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section2 h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.section2 .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.section2 .col {
+  // marginを利用しなくても横幅を小さく指定すれば等間隔の隙間ができる
+  width: 31%;
+  // h3のブロック（absolute）をcol内に固定する
+  position: relative;
+}
+
+.section2 img {
+  // イメージ画像の角を丸くする
+  border-radius: 20px;
+}
+
+.section2 h3 {
+  background-color: #60188f;
+  // background-colorの色を文字に対して縦横ぴったりサイズにして表示する
+  display: inline-block;
+  position: absolute;
+  // 以下position absoluteの位置指定
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 20px;
+  border-radius: 6px;
+}
+
+.section2 .center {
+  text-align: center;
+}
+
+// セクション2のメディアクエリ
+@media only screen and (max-width: 960px) {
+  .section2 .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .section2 .col {
+    // marginを利用しなくても横幅を小さく指定すれば等間隔の隙間ができる
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    width: 200px;
+    margin-right: 60px;
+    text-align: center;
+  }
+}
+
+
+
+
+// セクション３
+.section3 {
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.section3 .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.section3 .sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section3 h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.section3 .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section3 .col {
+  width: 48%;
+}
+
+.section3 .text {
+  line-height: 1.8;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.section3 img {
+  border-radius: 20px;
+}
+
+// セクション３のメディアクエリ
+@media only screen and (max-width: 960px) {
+  .section3 .row {
+    flex-wrap: wrap;
+  }
+
+  .section3 .col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+
+// 下層ページ共通
+.page_main-vi {
+  background-image: url("../../../assets/image/vsevolod-kxiJjBV8ov0-unsplash.jpg");
+  background-size: cover;
+  background-position: center top;
+  // purpleのabsoluteをメインビジュアルに固定
+  position: relative;
+}
+
+.page_main-vi .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+  height: 300px;
+  // titleのabsoluteをcontainerに固定
+  position: relative;
+}
+
+.page_main-vi .title {
+  // 自由に配置するCSS
+  position: absolute;
+  // top50% left50%にすると、中心から文章が右書きで表示されてしまうためtransformを利用して細かい位置調整を行い、タイトルと文章を中央に持って生きている。
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.page_main-vi h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.page_main-vi p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.page_main-vi .purple {
+  background-color: #8f19a7;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  // 乗算のCSS
+  mix-blend-mode: multiply;
+}
+
+// 会社概要セクション１
+.company_section1 {
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.company_section1 .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.company_section1 .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company_section1 .col {
+  width: 48%;
+}
+
+.company_section1 img {
+  border-radius: 20px;
+}
+
+.company_section1 table {
+  width: 100%;
+}
+.company_section1 table tr {
+  padding: 20px 0;
+  // テーブルタグはdisplay: block;を指定することで、paddingやmarginを効かせることができる。
+  display: block;
+  border-bottom: solid 1px #ffffff;
+  line-height: 1.5;
+}
+.company_section1 table tr th{
+  width: 150px;
+}
+
+// 会社概要セクション１のメディアクエリ
+@media only screen and (max-width: 960px) {
+  .company_section1 .row {
+    flex-wrap: wrap;
+  }
+
+  .company_section1 .col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .company_section1 table tr th{
+  width: 90px;
+}
+}
+
+
+// 事業内容セクション１
+.service_section1 {
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.service_section1 .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.service_section1 .sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.service_section1 h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.service_section1 .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.service_section1 .col {
+  width: 48%;
+}
+
+.service_section1 .text {
+  line-height: 1.8;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.service_section1 img {
+  border-radius: 20px;
+}
+
+// 事業内容セクション１のメディアクエリ
+@media only screen and (max-width: 960px) {
+  .service_section1 .row {
+    flex-wrap: wrap;
+  }
+
+  .service_section1 .col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+// お問い合わせセクション１
+.contact_section1 {
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.contact_section1 .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+.contact_section1 iframe{
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .page_main-vi .title {
+    width: 100%;
+  } 
+}
